@@ -184,18 +184,18 @@ Upload legal documents (PDFs, DOCX, TXT) via the sidebar. The agent builds a FAI
 
 | Pattern | Example | Replacement |
 |---|---|---|
-| Sri Lanka NIC | `912345678V` | `[REDACTED_NIC]` |
+| Sri Lanka NIC | `999995678V` | `[REDACTED_NIC]` |
 | Email | `user@gmail.com` | `[REDACTED_EMAIL]` |
-| 10-digit phone | `0771234567` | `[REDACTED_PHONE]` |
+| 10-digit phone | `0777654321` | `[REDACTED_PHONE]` |
 
 ### Stage 2 — Gemma 4:e4b (contextual)
 
 | PII Type | Example | Replacement |
 |---|---|---|
-| Full names | `Priya Nadarajah` | `[REDACTED_NAME]` |
+| Full names | `John Doe` | `[REDACTED_NAME]` |
 | Health conditions | `HIV positive` | `[REDACTED_HEALTH]` |
 | Financial details | `Rs. 2.4M salary` | `[REDACTED_FINANCIAL]` |
-| Organization names | `City Hospital` | `[REDACTED_ORG]` |
+| Organization names | `ABCXYZ Hospital` | `[REDACTED_ORG]` |
 | Temporal markers | `March 2024 admission` | `[REDACTED_TIMEFRAME]` |
 | Implied references | `my usual number` | `[REDACTED_REFERENCE]` |
 
@@ -205,30 +205,32 @@ Upload legal documents (PDFs, DOCX, TXT) via the sidebar. The agent builds a FAI
 
 **Raw prompt:**
 ```
-My client Priya Nadarajah, NIC 912345678V, reached out via 
-priya.n@gmail.com about a data breach at MediCare Pvt Ltd. 
-Her phone is 0771234567. The breach exposed her HIV status 
-from her Colombo General admission in March 2024. 
-Draft a letter to the DPA under Section 23 of the PDPA.
+My client John Doe, NIC 999995678V, reached out via 
+john.doe@example.com about a data breach at ABCXYZ Pvt Ltd. 
+Her phone is 0777654321. The breach exposed her health records 
+including her HIV status from the XYZABC Hospital 
+admission in March 2024. Draft a letter to the Data Protection 
+Authority under Section 23 of the PDPA.
 ```
 
 **After Stage 1 (regex):**
 ```
-My client Priya Nadarajah, NIC [REDACTED_NIC], reached out via 
-[REDACTED_EMAIL] about a data breach at MediCare Pvt Ltd. 
-Her phone is [REDACTED_PHONE]. The breach exposed her HIV status 
-from her Colombo General admission in March 2024. 
-Draft a letter to the DPA under Section 23 of the PDPA.
+My client John Doe, NIC [REDACTED_NIC], reached out via 
+[REDACTED_EMAIL] about a data breach at XYZABC Hospital. 
+Her phone is [REDACTED_PHONE]. The breach exposed her health records 
+including her HIV status from the XYZABC Hospital 
+admission in March 2024. Draft a letter to the Data Protection 
+Authority under Section 23 of the PDPA.
 ```
 
 **After Stage 2 (Gemma 4:e4b):**
 ```
 My client [REDACTED_NAME], NIC [REDACTED_NIC], reached out via 
-[REDACTED_EMAIL] about a data breach at [REDACTED_ORG]. 
-Her phone is [REDACTED_PHONE]. The breach exposed 
-[REDACTED_HEALTH_CONDITION] from a hospital admission in 
-[REDACTED_TIMEFRAME]. 
-Draft a letter to the DPA under Section 23 of the PDPA.
+[REDACTED_EMAIL] about a data breach at [REDACTED_ORGANIZATION]. 
+Her phone is [REDACTED_PHONE]. The breach exposed her health records 
+including [REDACTED_HEALTH_CONDITION] from a hospital admission in 
+[REDACTED_TIMEFRAME]. Draft a letter to the Data Protection Authority 
+under Section 23 of the PDPA.
 ```
 
 The AI receives a complete, actionable task. Your client's identity, health status, and organization are never transmitted.
