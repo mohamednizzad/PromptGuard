@@ -6,7 +6,7 @@
 
 PromptGuard intercepts prompts typed into ChatGPT or Claude.ai, runs PII redaction using **Gemma 4:e4b** entirely on your machine, and replaces the raw prompt with a sanitized version — before anything leaves your device.
 
-> Built for the [Gemma 4 Challenge](https://dev.to/challenges/gemma4) on DEV.to
+> Built for the [Gemma 4 Challenge]([https://dev.to/challenges/gemma4](https://dev.to/challenges/google-gemma-2026-05-06)) on DEV.to
 
 ---
 
@@ -332,4 +332,4 @@ MIT License — see `LICENSE` for details.
 
 ---
 
-*Built as part of the [Gemma 4 Challenge](https://dev.to/challenges/gemma4) on DEV.to*
+*Built as part of the [Gemma 4 Challenge](https://dev.to/challenges/gemma4) on DEV.to and check the Article [PromptGuard: I Built a Local AI Privacy Firewall That Sanitizes Your Prompts Before They Leave Your Machine]([https://dev.to/challenges/gemma4](https://dev.to/mohamednizzad/promptguard-i-built-a-local-ai-privacy-firewall-that-sanitizes-your-prompts-before-they-leave-pec))*
