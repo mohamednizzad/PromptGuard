@@ -332,4 +332,4 @@ MIT License — see `LICENSE` for details.
 
 ---
 
-*Built as part of the [Gemma 4 Challenge](https://dev.to/challenges/gemma4) on DEV.to and check the Article [PromptGuard: I Built a Local AI Privacy Firewall That Sanitizes Your Prompts Before They Leave Your Machine]([https://dev.to/challenges/gemma4](https://dev.to/mohamednizzad/promptguard-i-built-a-local-ai-privacy-firewall-that-sanitizes-your-prompts-before-they-leave-pec))*
+*Built as part of the [Gemma 4 Challenge](https://dev.to/challenges/gemma4) on DEV.to and check the Article [PromptGuard: I Built a Local AI Privacy Firewall That Sanitizes Your Prompts Before They Leave Your Machine](https://dev.to/mohamednizzad/promptguard-i-built-a-local-ai-privacy-firewall-that-sanitizes-your-prompts-before-they-leave-pec))*
